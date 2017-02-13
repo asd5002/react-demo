@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="all"></div>
+			<input type="text" name="txt" id="txt" value="" />
+			<input type="text" name="txt1" id="txt1" value="" />
+			<input type="file" name="file1" id="file1" value="" />
+			<input type="button" class="btn" value="11"/>
+		<script type="text/javascript">
+			$(".btn").click(function(){
+//				$.ajax({
+//					type:"get",
+//					url:"http://10.31.157.20/echo/demo.php",
+//					data:"name="+$("#txt").val()+"&age="+$("#txt1").val(),
+//					async:true,
+////					success:function(res){
+////						$(".all").html(res);
+////					}
+//				});
+				$.ajax({
+					url:"http://10.31.157.20/echo/demo1.php",
+					async:true,
+					success:function(res){
+						$(".all").html(res);
+						eval(res);
+						console.log(eval(res));
+					}
+				});
+			})
+				
+			
+		</script>
+	</body>
+</html>
